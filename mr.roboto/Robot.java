@@ -6,7 +6,10 @@ public class Robot {
 	
 	public Robot(String n, int d){
 		name = n;
-		dir = d;
+		dir  = d;
+		xpos = 1;
+		ypos = 1;
+		pts  = 0;
 	}
 
 	public String getName() {
@@ -49,8 +52,18 @@ public class Robot {
 		this.pts = pts;
 	}
 	
-	public void move(){
-		
+	public void move(int m){
+		//UP
+		if(dir==1)
+			ypos+=m;
+		//DIAGNAL
+		if(dir==2){
+			xpos+=m;
+			ypos+=m;
+		}
+		//RIGHT
+		if(dir==3)
+			xpos+=m;
 	}
 	
 	
